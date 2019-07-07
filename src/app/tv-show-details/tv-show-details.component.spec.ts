@@ -1,16 +1,36 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { TVShowDetailsComponent } from "./tv-show-details.component";
+import {ReactiveFormsModule,FormsModule} from '@angular/forms';
+import {
+  MatFormFieldModule,
+  MatInputModule,
+  MatButtonModule,
+  MatToolbarModule,
+  MatCardModule,
+  MatIconModule
+} from "@angular/material";
 
-import { TVShowDetailsComponent } from './tv-show-details.component';
 
-describe('TVShowDetailsComponent', () => {
+describe("TVShowDetailsComponent", () => {
   let component: TVShowDetailsComponent;
   let fixture: ComponentFixture<TVShowDetailsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TVShowDetailsComponent ]
-    })
-    .compileComponents();
+      imports: [
+        ReactiveFormsModule,
+        FormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        MatToolbarModule,
+        MatCardModule,
+        MatIconModule
+      ],
+      declarations: [TVShowDetailsComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +39,7 @@ describe('TVShowDetailsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

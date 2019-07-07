@@ -7,11 +7,14 @@ import { TVShowDetailsComponent } from './tv-show-details/tv-show-details.compon
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
+        NoopAnimationsModule,
+        BrowserAnimationsModule,
         RouterTestingModule,
         MatFormFieldModule,
         MatInputModule,
@@ -21,8 +24,8 @@ describe('AppComponent', () => {
         MatIconModule,
         FormsModule,
         ReactiveFormsModule,
-        HttpClientTestingModule,
-        BrowserAnimationsModule
+        HttpClientTestingModule
+        //BrowserAnimationsModule
       ],
       declarations: [
         AppComponent,
